@@ -1,0 +1,27 @@
+{% extends 'AppSuite/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiking</title>
+</head>
+<body>
+{% block body %}
+<p>Hiking Main Menu</p>
+
+<table>
+    <tr>
+        <td><a href="{% url 'AppSuite:add_hike' %}">Add a New Hike</a></td>
+    </tr>
+    <tr>
+        <td><a href="{% url 'AppSuite:search_hike' %}">Search for a Hike</a></td>
+    </tr>
+    <tr>
+        <td><a href="{% url 'AppSuite:export_hike' %}">Export a Hike</a></td>
+    </tr>
+</table>
+
+{% endblock %}
+
+</body>
+</html>

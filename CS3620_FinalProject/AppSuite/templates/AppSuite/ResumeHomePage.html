@@ -1,0 +1,25 @@
+{% extends 'AppSuite/base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume</title>
+</head>
+<body>
+{% block body %}
+<p>Resume Main Menu</p>
+<table>
+    <tr>
+        <td><a href="{% url 'AppSuite:create_resume' %}">Add a New Resume</a></td>
+    </tr>
+
+    <tr>
+        <td><a href="{% url 'AppSuite:export_resume' %}">Export \ Edit Your Resume</a></td>
+    </tr>
+</table>
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% extends 'AppSuite/base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Journal</title>
+</head>
+<body>
+{% block body %}
+<p>Journal Main Menu</p>
+<table>
+      <tr>
+        <td><a href="{% url 'AppSuite:add_new_journal_entry' %}">Add a New Journal Entry</a></td>
+    </tr>
+    <tr>
+        <td><a href="{% url 'AppSuite:search_journal_entries' %}">Search for a Journal Entry</a></td>
+    </tr>
+     <tr>
+        <td><a href="{% url 'AppSuite:display_all_journal_entries' %}">Display All Journal Entries</a></td>
+    </tr>
+
+</table>
+{% endblock %}
+
+</body>
+</html>

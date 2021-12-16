@@ -1,0 +1,22 @@
+{% extends 'AppSuite/base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit A Resume</title>
+</head>
+<body>
+{% block body%}
+<form method = "POST">
+        {% csrf_token %}
+       <table>
+       <tr>
+           <td>{{ form }}</td>
+       </tr>
+       </table>
+        <button type="submit">Update Resume</button>
+{% endblock %}
+</form>
+</body>
+</html>

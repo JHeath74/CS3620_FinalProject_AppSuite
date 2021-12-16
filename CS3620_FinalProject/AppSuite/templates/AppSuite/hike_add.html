@@ -1,0 +1,104 @@
+{% extends 'AppSuite/base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-7"  >
+            <h2><u><center>Add New Hike</center></u></h2>
+           <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="">Trail Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="Hike_Name"
+                name="Hike_Name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="">Trail Length</label>
+              <input
+                type="text"
+                class="form-control"
+                id="Hike_Length"
+                name="Hike_Length"
+              />
+            </div>
+            <div class="form-group">
+              <label for="">Trail Type</label>
+              <select id="Hike_TrailType" name="Hike_TrailType">
+                <option value=""></option>
+                <option value="Out and Back">Out and Back</option>
+                <option value="Loop">Loop</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="">Best Time To Hike</label>
+              <input
+                type="text"
+                class="form-control"
+                id="Hike_TimeOfYear"
+                name="Hike_TimeOfYear"
+              />
+            </div>
+            <div class="form-group">
+              <label for="">Trail Difficulty</label>
+              <select id="Hike_Difficulty" name="Hike_Difficulty">
+                <option value=""></option>
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+                <option value="Expert">Expert</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="">Closest Trailhead</label>
+              <input
+                type="text"
+                class="form-control"
+                id="Hike_TrailHead"
+                name="Hike_TrailHead"
+              />
+            </div>
+            <div class="form-group">
+              <label for="">Completed</label>
+              <select id="Hike_Completed" name="Hike_Completed">
+                <option value=""></option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="">Notes About Hike</label>
+              <textarea
+                class="form-control"
+                id="Hike_Notes"
+                name="Hike_Notes"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="">Upload Image</label>
+              <input
+                type="file"
+                class="form-control"
+                id="Hike_Images"
+                name="Hike_Images"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+</body>
+</html>

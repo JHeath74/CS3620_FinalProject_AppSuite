@@ -1,0 +1,24 @@
+{% extends 'AppSuite/base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Journal</title>
+</head>
+<body>
+{% block body %}
+{% for journal in all_journal_entries %}
+    <div class="row">
+        <div class="col-md-6">
+            Date: {{ journal.Date_Time }}
+            <br>
+            Entry: {{ journal.Journal_Entry }}
+        <hr>
+        </div>
+    </div>
+    {% endfor %}
+
+{% endblock %}
+</body>
+</html>

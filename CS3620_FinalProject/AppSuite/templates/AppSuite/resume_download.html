@@ -1,0 +1,33 @@
+{% extends 'AppSuite/base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block body %}
+<div class="container">
+    <div class="row m-5">
+        <div class="col-md-12">
+        <h2>Resume Profile List</h2>
+        </div>
+    </div>
+    {% for profile in myresumes %}
+    <div class="row">
+        <div class="col-md-6">
+            {{ profile.name}}
+        </div>
+        <div class="col-md-6">
+            <a href="{% url 'AppSuite:edit_resume' profile.id %}" class="btn btn-success">Edit Resume</a>
+            <a href="{% url 'AppSuite:resume' profile.id %}" class="btn btn-primary">Download Resume</a>
+        </div>
+    </div>
+    <hr>
+    {% endfor %}
+    {% endblock %}
+</div>
+</body>
+</html>

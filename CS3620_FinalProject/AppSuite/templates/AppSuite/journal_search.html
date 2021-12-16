@@ -1,0 +1,51 @@
+{% extends 'AppSuite/base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+
+
+</head>
+<body>
+{% block body %}
+<form action="" method="GET">
+    <form action="" method="GET">
+      <label for="Journal_Entry">Journal Entry</label>
+      <input type="search" id="Journal_Entry" name="Journal_Entry" /><br/>
+
+    <button type="submit">Search</button>
+    <button type="reset">Reset</button>
+
+</form>
+
+<hr>
+
+{% for journal_item in journal_object %}
+<table>
+    <tr>
+        <td>{{ journal_item.Date_Time}}
+    </tr>
+    <tr>
+        <td>{{ journal_item.Journal_Entry }}
+    </tr>
+</table>
+
+{% endfor %}
+<br>
+{% if journal_object.has_previous %}
+<a href="?page=1">First</a>
+<a href="?page={{ journal_object.previous_page_number}}">Previous</a>
+{% endif %}
+
+Page: {{ journal_object.number }} of {{ journal_object.paginator.num_pages }}
+
+{% if journal_object.has_next %}
+    <a href="?page={{ journal_object.next_page_number}}">Next</a>
+    <a href="?page={{ journal_object.paginator.num_pages}}">Last</a>
+{% endif %}
+
+{% endblock %}
+</body>
+</html>

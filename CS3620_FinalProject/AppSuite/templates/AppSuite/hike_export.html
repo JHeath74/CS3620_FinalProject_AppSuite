@@ -1,0 +1,35 @@
+{% extends 'AppSuite/base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Export a Hike</title>
+    </head>
+<body>
+{% block body %}
+<div class="container">
+    <div class="row m-5">
+        <div class="col-md-12">
+        <h2>Hike List</h2>
+        </div>
+    </div>
+    {% for hike in all_hikes %}
+    <div class="row">
+        <div class="col-md-4">
+            {{ hike.Hike_Name}}
+        </div>
+        <div class="col-md-4">
+            {{hike.Hike_TrailHead}}
+        </div>
+        <div class="col-md-4">
+            <a href="{% url 'AppSuite:Hikes' hike.id %}" class="btn btn-warning">Download Hike</a>
+        </div>
+    </div>
+    <hr>
+    {% endfor %}
+</div>
+
+{% endblock %}
+</body>
+</html>

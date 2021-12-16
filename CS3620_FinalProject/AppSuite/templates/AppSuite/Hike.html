@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="http://{{request.get_host}}/">
+    <meta charset="UTF-8">
+    <title>Hike</title>
+</head>
+<body>
+
+<img class="card"
+     width="360px"
+     height="240px"
+     src="{{ hikes.Hike_Images.url }}"
+     alt="images"/>
+<h2>Hike Name: {{hikes.Hike_Name}}</h2>
+<h2>Hike Length: {{hikes.Hike_Length}}</h2>
+<h2>Nearest Trailhead: {{hikes.Hike_TrailHead}}</h2>
+<hr>
+<p>Summary</p>
+<p>Trail Type: {{hikes.Hike_TrailType}}</p>
+<p>Favorite Time to Hike: {{hikes.Hike_TimeOfYear}}</p>
+<p>Difficulty: {{hikes.Hike_Difficulty}}</p>
+<p>Completed Hike: {{hikes.Hike_Completed}}</p>
+<hr>
+<p>Notes</p>
+<p>{{hikes.Hike_Notes}}</p>
+
+</body>
+</html>
